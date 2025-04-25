@@ -1,0 +1,112 @@
+.list-products {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	gap: 1rem;
+	background-color: #333;
+	border-radius: 15px;
+	border: 1px solid #444;
+	padding: 1rem;
+	width: 80vw;
+	overflow: hidden;
+	height: 100%;
+
+	.list {
+		display: grid;
+		grid-template-columns: 1fr;
+		justify-content: center;
+		overflow-y: scroll;
+		height: calc(100vh - 210px);
+		@media (max-width: 1100px) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	button {
+		display: grid;
+		grid-template-columns: 20% 50% 30%;
+		margin: 0.5rem;
+		padding: 0.5rem 1rem;
+		background-color: var(--cardbg);
+		color: var(--maintext);
+		border-radius: 0;
+		border: 1px solid transparent;
+		cursor: pointer;
+		margin: 0;
+		border: 1px solid var(--border);
+
+		transition: border-color 200ms, background-color 200ms;
+
+		&:hover {
+			border-color: red;
+			background-color: var(--boxbg2);
+		}
+		&:focus, 
+        &:focus-visible {
+            outline: none;
+            border: 1px solid var(--mainborder);
+            animation: rainbow-border 5s linear infinite;
+		}
+
+		&:nth-last-child() {
+			background-color: red;
+			color: var(--maintext);
+		}
+	}
+}
+
+.product-details {
+	.edit-header {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		width: 100%;
+		padding: 0.5rem;
+		background-color: var(--cardbg);
+		color: var(--maintext);
+		border: 1px solid var(--border);
+		transition: var(--theme-anim-time);
+		font-family: Chakra Petch;
+		font-size: 0.5rem;
+		font-weight: 800;
+		font-style: italic;
+		text-transform: uppercase;
+	}
+
+	.product-details-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+
+		.col {
+			grid-column: span 2;
+		}
+	}
+}
+.actions {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    color: var(--maintext);
+    font-size: 1.2rem;
+    font-style: italic;
+    text-transform: uppercase;
+
+    button {
+
+        background-color: var(--cardbg);
+        color: var(--maintext);
+        border: 1px solid var(--border);
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        width: 20%;
+
+        text-align: center;
+        transition: var(--theme-anim-time);
+        text-transform: uppercase;
+
+    }
+}
+
